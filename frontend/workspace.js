@@ -32,18 +32,25 @@ function readableError(body, fallback) {
 
 async function openSource(event, path) {
   event.preventDefault();
-  const viewer = window.open("about:blank", "_blank", "noopener");
-  if (!viewer) {
-    setStatus("Allow pop-ups to view the source.", true);
-    return;
-  }
   try {
     const response = await fetch(path, { headers: headers() });
     if (!response.ok) throw new Error(`Source request failed (${response.status})`);
     const blob = await response.blob();
-    viewer.location.href = URL.createObjectURL(blob);
+    const objectUrl = URL.createObjectURL(blob);
+    const overlay = document.createElement("div");
+    overlay.className = "source-viewer";
+    overlay.innerHTML = '<div class="source-viewer-header"><strong>Source preview</strong><button type="button" class="ghost-button">Close</button></div><iframe title="Source preview"></iframe>';
+    const close = () => {
+      URL.revokeObjectURL(objectUrl);
+      overlay.remove();
+    };
+    overlay.querySelector("button").addEventListener("click", close);
+    overlay.addEventListener("click", (overlayEvent) => {
+      if (overlayEvent.target === overlay) close();
+    });
+    overlay.querySelector("iframe").src = objectUrl;
+    document.body.append(overlay);
   } catch (error) {
-    viewer.close();
     setStatus(error.message, true);
   }
 }

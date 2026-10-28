@@ -36,6 +36,12 @@
         </section>
       </section>
     </main>
-    <script src="/frontend/workspace.js?v=4"></script>
+    <style>
+      .source-viewer { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; padding: 24px; background: #0b0f17f2; }
+      .source-viewer-header { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto 12px; color: #f2f5ff; }
+      .source-viewer iframe { width: 100%; height: 100%; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+      @media (max-width: 560px) { .source-viewer { padding: 12px; } }
+    </style>
+    <script src="/frontend/workspace.js?v=5"></script>
   </body>
 </html>
