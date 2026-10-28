@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create account | Notebook LLM</title>
+    <link rel="stylesheet" href="/frontend/styles.css?v=3">
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="auth-story">
+        <a class="brand" href="/frontend/login.html"><span class="brand-mark">N</span> Notebook LLM</a>
+        <div class="story-copy">
+          <p class="eyebrow">A calmer way to research</p>
+          <h1>Turn reading into momentum.</h1>
+          <p class="lead">Create a focused space for every project, then let grounded answers help you move from scattered notes to clear thinking.</p>
+        </div>
+        <p class="fine-print">Your workspace. Your sources. Your context.</p>
+      </section>
+      <section class="auth-card">
+        <p class="eyebrow">Get started</p>
+        <h2>Create your account</h2>
+        <p class="muted">Start building your private research workspace.</p>
+        <form id="register-form" class="stack">
+          <label>Email<input id="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <label>Password<input id="password" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters"></label>
+          <button class="primary-button" type="submit">Create account <span>→</span></button>
+        </form>
+        <p id="status" class="status"></p>
+        <p class="auth-switch">Already have an account? <a href="/frontend/login.html">Sign in</a></p>
+      </section>
+    </main>
+    <script src="/frontend/auth.js?v=3"></script>
+  </body>
+</html>

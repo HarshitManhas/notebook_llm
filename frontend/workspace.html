@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workspace | Notebook LLM</title>
+    <link rel="stylesheet" href="/frontend/styles.css?v=3">
+  </head>
+  <body class="workspace-page">
+    <header class="topbar">
+      <a class="brand" href="/frontend/workspace.html"><span class="brand-mark">N</span> Notebook LLM</a>
+      <div class="topbar-actions"><span class="connection-dot">● Local workspace</span><button id="logout" class="ghost-button">Sign out</button></div>
+    </header>
+    <main class="workspace-shell">
+      <section class="workspace-heading">
+        <div><p class="eyebrow">Research workspace</p><h1>Good to see you.</h1><p class="muted">Choose a notebook, add your sources, and ask better questions.</p></div>
+        <div id="status" class="status"></div>
+      </section>
+      <section class="workspace-grid">
+        <aside class="sidebar">
+          <div class="section-heading"><h2>Notebooks</h2><span id="notebook-count" class="count-badge">0</span></div>
+          <form id="notebook-form" class="create-row"><input id="notebook-name" required placeholder="New notebook name"><button class="icon-button" title="Create notebook" type="submit">+</button></form>
+          <div id="notebook-list" class="notebook-list"></div>
+        </aside>
+        <section class="content-column">
+          <div class="panel source-panel">
+            <div class="section-heading"><div><p class="eyebrow">Selected notebook</p><h2 id="selected-name">Select a notebook</h2></div><span id="selected-count" class="muted"></span></div>
+            <div class="upload-zone"><div class="upload-icon">↑</div><div><strong>Add a source</strong><p class="muted">PDF, TXT, or Markdown up to 10 MB</p></div><input id="document-file" type="file" accept=".pdf,.txt,.md,.markdown"><button id="upload-document" class="secondary-button" type="button">Upload</button></div>
+            <div id="document-list" class="document-list"></div>
+          </div>
+          <div class="panel chat-panel">
+            <div class="section-heading"><div><p class="eyebrow">Ask your sources</p><h2>Evidence-based chat</h2></div><span class="model-badge">gemma3:4b</span></div>
+            <div id="messages" class="messages"><div class="empty-chat"><span>✦</span><p>Ask a question about your selected notebook.</p></div></div>
+            <form id="chat-form" class="chat-input"><input id="question" type="text" placeholder="What would you like to understand?" required><button class="primary-button" type="submit">Ask <span>→</span></button></form>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="/frontend/workspace.js?v=4"></script>
+  </body>
+</html>

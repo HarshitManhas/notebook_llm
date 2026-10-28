@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign in | Notebook LLM</title>
+    <link rel="stylesheet" href="/frontend/styles.css?v=3">
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <section class="auth-story">
+        <a class="brand" href="/frontend/login.html"><span class="brand-mark">N</span> Notebook LLM</a>
+        <div class="story-copy">
+          <p class="eyebrow">Your private research desk</p>
+          <h1>Think with the sources you trust.</h1>
+          <p class="lead">Bring your PDFs and notes together. Ask questions, follow the evidence, and keep every idea close to its source.</p>
+        </div>
+        <p class="fine-print">Local-first document intelligence</p>
+      </section>
+      <section class="auth-card">
+        <p class="eyebrow">Welcome back</p>
+        <h2>Sign in to your workspace</h2>
+        <p class="muted">Your notebooks and sources are waiting.</p>
+        <form id="login-form" class="stack">
+          <label>Email<input id="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <label>Password<input id="password" type="password" autocomplete="current-password" required placeholder="Your password"></label>
+          <button class="primary-button" type="submit">Continue <span>→</span></button>
+        </form>
+        <p id="status" class="status"></p>
+        <p class="auth-switch">New here? <a href="/frontend/register.html">Create an account</a></p>
+        <details class="dev-access">
+          <summary>Local development API key</summary>
+          <input id="api-key" type="password" placeholder="local-development-key">
+        </details>
+      </section>
+    </main>
+    <script src="/frontend/auth.js?v=3"></script>
+  </body>
+</html>

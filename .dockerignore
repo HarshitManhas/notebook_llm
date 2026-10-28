@@ -1,0 +1,10 @@
+.git
+.gitignore
+.venv
+__pycache__
+.pytest_cache
+*.pyc
+data/notebookllm.sqlite3
+data/uploads
+.env
+tests
